@@ -70,8 +70,7 @@ function generate_post_types() {
 
 }
 /*
-   $post_types = array();
-   $post_types[] = array(
+   $arg = array(
         "post_type"=>"your-post-type", 
         "title"=>"Your Post Title", 
         "plural_title"=>"Your Post plural",  
