@@ -9,12 +9,12 @@ class Generate_Custom_Post_Type {
     */
     
    public function __construct($arg=array()) {
-        $post_types = $arg;
+        $this->post_types = $arg;
         add_action('init', array( $this, 'generate_post_types' ), 0);
    }
    
 function generate_post_types() {
-   foreach($post_types as $post_type) {
+   foreach($this->post_types as $post_type) {
       $labels = array(
          'name'                  => _x($post_type['title'], 'Post Type General Name', 'text_domain'),
          'singular_name'         => _x($post_type['title'], 'Post Type Singular Name', 'text_domain'),
@@ -63,14 +63,15 @@ function generate_post_types() {
          'publicly_queryable'  => true,
          'capability_type'     => 'page',
       );
-      register_post_type($post_type['post_type'], $args);
+      @register_post_type($post_type['post_type'], $args);
    }
 }
 
 
 }
 /*
-   $arg = array(
+ $arg =array();
+   $arg[] = array(
         "post_type"=>"your-post-type", 
         "title"=>"Your Post Title", 
         "plural_title"=>"Your Post plural",  
