@@ -2,7 +2,7 @@
 Generate multiple Post Type
 
 
-Include Create post_type.php in your theme function file 
+Include post_type.php in your theme function file 
 
 
 Add this code to function
